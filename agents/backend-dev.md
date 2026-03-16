@@ -80,6 +80,16 @@ serve(async (req: Request) => {
 - Implement image transformation policies
 - Clean up orphaned files
 
+## Workflow Chain
+You are in the BUILD phase, handling the server side:
+```
+architect (how) → YOU (build backend) + flutter-dev (build frontend) → code-reviewer (quality) → test-engineer (verify)
+```
+- `architect` provides ADRs and API contracts — implement them precisely
+- For complex schema work, collaborate with `database-expert`
+- Your Edge Functions and RLS policies will be audited by `security-auditor`
+- `flutter-dev` will consume your APIs — ensure clear contracts and error responses
+
 ## When Writing Code
 1. Security first: RLS, input validation, auth checks
 2. Performance: optimize queries, use indexes

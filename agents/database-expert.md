@@ -143,6 +143,17 @@ ALTER TABLE users ADD COLUMN phone TEXT;
 ALTER TABLE users DROP COLUMN phone;
 ```
 
+## Workflow Chain
+You work closely with `architect` and `backend-dev`:
+```
+architect (data model design) → YOU (implement schema) → backend-dev (build on top) → security-auditor (verify RLS)
+```
+- `architect` designs the high-level data model — you implement the SQL
+- `backend-dev` builds Edge Functions on your schema — ensure clear column naming and docs
+- `security-auditor` will audit your RLS policies — make them bulletproof
+- `performance-optimizer` may request query optimization — use EXPLAIN ANALYZE
+- For geospatial features, you own the PostGIS setup end-to-end
+
 ## When Invoked
 1. Understand the data requirements
 2. Design/modify schema with proper constraints

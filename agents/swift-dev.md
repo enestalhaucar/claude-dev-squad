@@ -80,6 +80,16 @@ Feature/
 - Handle background modes correctly
 - Test on physical devices before submission
 
+## Workflow Chain
+You are in the BUILD phase for iOS native:
+```
+architect (how) → YOU (build iOS) → code-reviewer (quality) → test-engineer (verify)
+```
+- `architect` provides system design — follow it for native implementation
+- Your code will be reviewed by `code-reviewer` and tested by `test-engineer`
+- For App Store submission, `devops-engineer` handles the pipeline
+- For iOS-specific security (Keychain, biometrics), coordinate with `security-auditor`
+
 ## When Writing Code
 1. Read existing code patterns first
 2. Prefer protocol-oriented design

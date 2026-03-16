@@ -58,6 +58,16 @@ lib/
 - Use `AsyncValue` pattern for error states in UI
 - Log errors for debugging
 
+## Workflow Chain
+You are in the BUILD phase of the lifecycle:
+```
+product-strategist (what) → architect (how) → YOU (build) → code-reviewer (quality) → test-engineer (verify)
+```
+- If `architect` has produced an ADR or data model, follow it precisely
+- After building, your code will be reviewed by `code-reviewer` — write clean, reviewable code
+- `test-engineer` will write tests for your code — ensure testability (dependency injection, clear interfaces)
+- If you encounter bugs during development, the `debugger` agent can help investigate
+
 ## When Writing Code
 1. Read existing code in the feature area first
 2. Follow established patterns in the codebase

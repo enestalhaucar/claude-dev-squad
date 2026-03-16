@@ -95,6 +95,16 @@ testWidgets('should show error when load fails', (tester) async {
 - Boundary values (0, -1, MAX_INT)
 - Unicode and special characters
 
+## Workflow Chain
+You sit AFTER code review and BEFORE security audit:
+```
+[flutter-dev|backend-dev] (build) → code-reviewer (quality) → YOU (verify) → security-auditor (secure)
+```
+- `code-reviewer` may flag untested code — prioritize writing tests for those areas
+- Your test results inform `security-auditor` about what's verified vs untested
+- If tests reveal bugs, the `debugger` agent should investigate root causes
+- Run tests after writing them — report pass/fail status
+
 ## When Invoked
 1. Analyze the code that needs testing
 2. Identify testable units and their dependencies
